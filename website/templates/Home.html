@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+  Website
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    {% for a in prod %}
+      <div class="box">
+        <span>{{ a.product_Name }}</span>
+        <br />
+        <br />
+        <p>{{ a.product_Description }}</p>
+        <br />
+        <span>{{ a.product_Price }}</span>
+
+        <div class="btn1">
+          <button type="submit">BUY</button>
+          <button >Add to cart</button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

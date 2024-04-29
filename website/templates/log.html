@@ -1,0 +1,32 @@
+{% extends "basic.html" %}
+{% block body  %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/static/log.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page </title>
+  </head>
+  <body>
+    <div class="log">
+      <form method="post" action="{% url 'Log' %}">
+        {% csrf_token %}
+        <h2>Login Page</h2><br />
+        <label id="username">Username:</label><br />
+        <input type="text" name="username" /><br />
+
+        <label id="password">Password:</label><br />
+        <input type="password" name="password" /><br />
+
+        <div class="logbtn">
+          <button onclick="login()">Log In</button>
+          <a href="{% url 'register' %}"><button type="button">Register</button></a>
+        </div>
+      </form>
+    </div>
+  </body>
+  {% endblock body  %}
+</html>
+
+
